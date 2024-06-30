@@ -39,7 +39,7 @@ Before using the development container, ensure you have the following installed 
 1. **Clone the Repository**
 
     ```sh
-    git clone https://github.com/YourUsername/cpp-17-clang.git
+    git clone https://github.com/ChristopherRFord/cpp-17-clang.git
     cd cpp-17-clang
     ```
 
