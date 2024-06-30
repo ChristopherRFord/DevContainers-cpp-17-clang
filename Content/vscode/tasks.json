@@ -1,0 +1,58 @@
+{
+    "version": "2.0.0",
+    "tasks":
+    [
+        {
+            "label"          : "Configure",
+            "type"           : "shell",
+            "command"        : "meson",
+            "args"           :
+            [
+                "setup",
+                "build"
+            ],
+            "problemMatcher" : []
+        },
+  
+        {
+            "label"          : "Build",
+            "type"           : "shell",
+            "command"        : "ninja",
+            "args"           :
+            [
+                "-C",
+                "build"
+            ],
+            "group"          :
+            {
+                "kind"       : "build",
+                "isDefault"  : true
+            },
+            "dependsOn"      : ["Configure"]
+        },
+  
+        {
+            "label"   : "Clean",
+            "type"    : "shell",
+            "command" : "rm",
+            "args"    :
+            [
+                "-rf",
+                "build"
+            ]
+        },
+        
+        {
+            "label"          : "Run TestBench",
+            "type"           : "shell",
+            "command"        : "./build/TestBench",
+            "group"          :
+            {
+                "kind"       : "test",
+                "isDefault"  : true
+            },
+            "problemMatcher" : [],
+            "dependsOn"      : ["Build"]
+        }
+    ]
+  }

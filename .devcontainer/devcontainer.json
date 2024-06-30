@@ -1,0 +1,26 @@
+{
+    "name"  : "C++ Development",
+    "build" :
+    {
+        "dockerfile" : "../Dockerfile",
+        "context"    : ".."
+    },
+
+    "customizations": 
+    {
+        "vscode": 
+        {
+            "extensions": 
+            [
+                "vadimcn.vscode-lldb",
+                "mesonbuild.mesonbuild",
+                "llvm-vs-code-extensions.vscode-clangd",
+                "tonybaloney.vscode-pets"
+            ]
+        }
+    },
+
+    "workspaceFolder": "/workspace",
+    "runArgs": ["--init", "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+    "remoteUser": "root"
+}
